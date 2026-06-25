@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-romantic-deep: #C2185B;
+  --color-romantic-soft: #FCE4EC;
+  --color-romantic-blush: #FFF0F5;
+  --color-romantic-cream: #FFF8F0;
+  --color-romantic-gold: #F5C842;
+  --color-romantic-darkBg: #1A0A10;
+  --color-romantic-darkCard: #2A1420;
+  --color-romantic-darkAccent: #FF4081;
+
+  --font-sans: 'Inter', 'Lato', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-cursive: 'Dancing Script', 'Pacifico', cursive;
+
+  --animate-fade-in-up: fadeInUp 1s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-romantic-cream text-slate-800 font-sans antialiased overflow-x-hidden transition-colors duration-500;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-romantic-deep/25 rounded-full hover:bg-romantic-deep/40 transition-colors;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-romantic-darkAccent/25 rounded-full hover:bg-romantic-darkAccent/40 transition-colors;
+}
+
+/* Custom styles for glowing text and glassmorphism */
+.text-glow-rose {
+  text-shadow: 0 0 12px rgba(192, 24, 91, 0.25);
+}
+
+.dark .text-glow-rose {
+  text-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 12px rgba(245, 200, 66, 0.3);
+}
+
+.dark .text-glow-gold {
+  text-shadow: 0 0 15px rgba(245, 200, 66, 0.6);
+}
+
+.glass-card {
+  @apply bg-white/70 border border-white/30 backdrop-blur-md shadow-xl;
+}
+
+.dark .glass-card {
+  @apply bg-romantic-darkCard/80 border border-white/5 backdrop-blur-md shadow-2xl;
+}
+
+.glass-nav {
+  @apply bg-romantic-cream/80 backdrop-blur-md shadow-sm;
+}
+
+.dark .glass-nav {
+  @apply bg-romantic-darkBg/80 backdrop-blur-md shadow-md;
+}
+
+/* Sparkles details */
+.sparkle-slow {
+  animation: sparkle 4s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
