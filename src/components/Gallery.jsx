@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
@@ -132,6 +132,8 @@ const galleryPhotos = [
 ];
 
 export default function Gallery() {
+  const [activePhotoId, setActivePhotoId] = useState(null);
+
   return (
     <section id="galeria" className="py-20 px-4 max-w-6xl mx-auto">
       {/* Cabeçalho da Seção */}
@@ -156,6 +158,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: photo.id * 0.05 }}
+              onClick={() => setActivePhotoId(activePhotoId === photo.id ? null : photo.id)}
               className={`group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl border border-slate-100 dark:border-slate-800 transition-all duration-500 h-auto md:h-full ${photo.gridClass}`}
             >
               {photo.image ? (
@@ -181,8 +184,8 @@ export default function Gallery() {
                 </div>
               )}
 
-              {/* Overlay Suave que surge no Hover */}
-              <div className="absolute inset-0 bg-romantic-deep/80 dark:bg-romantic-darkBg/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+              {/* Overlay Suave que surge no Hover (Desktop) e no Clique/Toque (Mobile) */}
+              <div className={`absolute inset-0 bg-romantic-deep/80 dark:bg-romantic-darkBg/90 backdrop-blur-sm transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center ${activePhotoId === photo.id ? 'opacity-100 pointer-events-auto' : 'opacity-0 md:group-hover:opacity-100 pointer-events-none md:pointer-events-auto'}`}>
                 <motion.div
                   initial={{ y: 15, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
