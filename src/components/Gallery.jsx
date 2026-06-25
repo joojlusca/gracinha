@@ -145,8 +145,8 @@ export default function Gallery() {
         </p>
       </div>
 
-      {/* Grid de Fotos Mosaico Assimétrico */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[220px]">
+      {/* Grid de Fotos Mosaico Assimétrico (h-auto no mobile, auto-rows no desktop) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 md:auto-rows-[220px]">
         {galleryPhotos.map((photo) => {
           const PhotoIcon = photo.icon;
           return (
@@ -156,14 +156,14 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: photo.id * 0.05 }}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl border border-slate-100 dark:border-slate-800 transition-all duration-500 ${photo.gridClass}`}
+              className={`group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl border border-slate-100 dark:border-slate-800 transition-all duration-500 h-auto md:h-full ${photo.gridClass}`}
             >
               {photo.image ? (
-                /* Exibe imagem real com zoom dinâmico no hover */
+                /* Exibe imagem real inteira no mobile (h-auto/object-contain) e cortada no mosaico do desktop */
                 <img
                   src={`${import.meta.env.BASE_URL}${photo.image.startsWith('/') ? photo.image.substring(1) : photo.image}`}
                   alt={photo.phrase}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-auto md:h-full md:w-full object-contain md:object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
               ) : (
