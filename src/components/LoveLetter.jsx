@@ -105,27 +105,27 @@ export default function LoveLetter() {
               initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ type: 'spring', damping: 20, stiffness: 80 }}
-              className="glass-card w-full p-6 md:p-12 rounded-3xl border-romantic-soft/30 shadow-2xl relative"
+              className="w-full p-6 md:p-12 rounded-3xl border border-romantic-gold/20 shadow-2xl relative bg-[#FFFDF9] dark:bg-[#FFFDF9]"
               style={{
-                backgroundImage: 'radial-gradient(circle at 10% 10%, rgba(252, 228, 236, 0.25) 0%, transparent 80%)'
+                backgroundImage: 'radial-gradient(circle at 10% 10%, rgba(252, 228, 236, 0.15) 0%, transparent 80%)'
               }}
             >
               {/* Selo no topo da carta */}
               <div className="absolute top-6 right-6 md:top-8 md:right-8 opacity-20 hover:opacity-100 transition-opacity">
-                <Heart className="w-8 h-8 text-romantic-deep dark:text-romantic-darkAccent fill-current cursor-pointer" onClick={triggerConfetti} />
+                <Heart className="w-8 h-8 text-romantic-deep dark:text-romantic-deep fill-current cursor-pointer" onClick={triggerConfetti} />
               </div>
-
+ 
               {/* Corpo da Carta */}
               <div className="space-y-6 md:space-y-8 text-left">
                 {/* Cabeçalho Festivo */}
                 <div className="text-center mb-4">
-                  <h4 className="font-serif text-2xl md:text-3xl text-romantic-deep dark:text-romantic-darkAccent font-bold tracking-wide">
+                  <h4 className="font-serif text-2xl md:text-3xl text-romantic-deep dark:text-romantic-deep font-bold tracking-wide">
                     FELIZ NOSSO DIA MEU AMOR!!!!
                   </h4>
                 </div>
-
+ 
                 {/* Conteúdo Caligráfico */}
-                <div className="font-cursive text-xl md:text-2xl text-slate-700 dark:text-slate-200 leading-relaxed space-y-6 tracking-wide">
+                <div className="font-cursive text-xl md:text-2xl text-slate-800 dark:text-slate-800 leading-relaxed space-y-6 tracking-wide">
                   <p>
                     Como é bom partilhar essa vida com você, meus dias ganharam mais cor quando você entrou na minha vida, sou eternamente grato a Deus por ter te conhecido, como é possível duas pessoas de universos tão diferentes combinarem tanto?
                   </p>
@@ -135,20 +135,20 @@ export default function LoveLetter() {
                   <p>
                     Quero desejar muita prosperidade para nós, ainda virão muitos anos juntos pela frente, nossa parceria foi a melhor coisa que já me aconteceu, somos a melhor dupla existente <Emoji name="sunglasses" code="1f60e" />.
                   </p>
-                  <p className="text-romantic-deep dark:text-romantic-darkAccent font-medium text-glow-rose text-2xl md:text-3xl mt-4">
+                  <p className="text-romantic-deep dark:text-romantic-deep font-medium text-glow-rose text-2xl md:text-3xl mt-4">
                     Eu te amo!
                   </p>
                 </div>
-
+ 
                 {/* Assinatura */}
                 <div className="pt-4 border-t border-romantic-soft/20 text-right">
-                  <p className="font-sans text-xs md:text-sm text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+                  <p className="font-sans text-xs md:text-sm text-slate-500 dark:text-slate-500 uppercase tracking-widest">
                     Assinado por:
                   </p>
-                  <p className="font-cursive text-2xl md:text-3xl text-romantic-deep dark:text-romantic-darkAccent mt-2">
+                  <p className="font-cursive text-2xl md:text-3xl text-romantic-deep dark:text-romantic-deep mt-2">
                     João Lucas Carrasco Souza
                   </p>
-                  <p className="font-sans text-[11px] text-slate-400 dark:text-slate-500 mt-1">
+                  <p className="font-sans text-[11px] text-slate-400 dark:text-slate-400 mt-1">
                     (esse é meu nome completo caso você não saiba kkkk)
                   </p>
                 </div>
