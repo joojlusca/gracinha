@@ -161,7 +161,7 @@ export default function Gallery() {
               {photo.image ? (
                 /* Exibe imagem real com zoom dinâmico no hover */
                 <img
-                  src={photo.image}
+                  src={`${import.meta.env.BASE_URL}${photo.image.startsWith('/') ? photo.image.substring(1) : photo.image}`}
                   alt={photo.phrase}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"

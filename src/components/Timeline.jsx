@@ -180,7 +180,7 @@ export default function Timeline() {
                   {/* Polaroid Image Slot */}
                   {event.image ? (
                     <img 
-                      src={event.image} 
+                      src={`${import.meta.env.BASE_URL}${event.image.startsWith('/') ? event.image.substring(1) : event.image}`} 
                       alt={event.title} 
                       className="w-full aspect-square object-cover rounded border border-slate-100 dark:border-slate-850" 
                     />

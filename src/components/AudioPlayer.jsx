@@ -7,7 +7,7 @@ export default function AudioPlayer() {
   const audioRef = useRef(null);
 
   // URL da música local do casal na pasta pública
-  const audioUrl = "/Tim Bernardes - BB (Garupa de Moto Amarela) (Audio Oficial + Lyrics) - Tim Bernardes (youtube).mp3";
+  const audioUrl = `${import.meta.env.BASE_URL}Tim Bernardes - BB (Garupa de Moto Amarela) (Audio Oficial + Lyrics) - Tim Bernardes (youtube).mp3`;
 
   useEffect(() => {
     // Configura o áudio
