@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 
-export default function Countdown() {
+export default function Countdown({ isDark }) {
   const [timeLeft, setTimeLeft] = useState({
     years: 0,
     months: 0,
@@ -97,7 +97,7 @@ export default function Countdown() {
             <span className="font-serif text-3xl md:text-5xl font-semibold text-romantic-deep dark:text-romantic-darkAccent text-glow-rose">
               {String(block.value).padStart(2, '0')}
             </span>
-            <span className="text-xs md:text-sm font-medium tracking-wider text-slate-800 dark:text-slate-300 mt-2 uppercase">
+            <span className={`text-xs md:text-sm font-medium tracking-wider mt-2 uppercase transition-colors duration-500 ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
               {block.label}
             </span>
           </div>
@@ -105,7 +105,7 @@ export default function Countdown() {
       </div>
 
       {/* Dias totais acumulados */}
-      <div className="mt-8 flex items-center justify-center gap-2 px-6 py-2 rounded-full glass-card border-romantic-soft/20 text-sm md:text-base text-slate-900 dark:text-slate-200 font-medium">
+      <div className={`mt-8 flex items-center justify-center gap-2 px-6 py-2 rounded-full glass-card border-romantic-soft/20 text-sm md:text-base font-medium transition-colors duration-500 ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>
         <Heart className="w-4 h-4 text-romantic-deep dark:text-romantic-darkAccent animate-pulse-slow fill-current" />
         <span>Já são <strong className="text-romantic-deep dark:text-romantic-darkAccent font-semibold font-serif text-lg">{timeLeft.totalDays}</strong> dias rindo das suas gracinhas!</span>
         <Heart className="w-4 h-4 text-romantic-deep dark:text-romantic-darkAccent animate-pulse-slow fill-current" />

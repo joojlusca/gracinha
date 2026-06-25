@@ -76,7 +76,7 @@ function App() {
                 Para você, Gracinha 🤍
               </p>
 
-              <p className="font-sans text-sm md:text-base text-slate-900 dark:text-slate-200 mb-8 max-w-sm leading-relaxed">
+              <p className={`font-sans text-sm md:text-base mb-8 max-w-sm leading-relaxed transition-colors duration-500 ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>
                 Como fui barrado de dar presentes, dediquei meu tempo criando esse memorial para eternizar nossa história.
               </p>
 
@@ -130,17 +130,17 @@ function App() {
                   Para você, Gracinha 🤍
                 </h2>
 
-                <h1 className="font-serif text-3xl md:text-5xl text-black dark:text-white font-bold tracking-tight leading-tight max-w-2xl mb-8 drop-shadow-sm">
+                <h1 className={`font-serif text-3xl md:text-5xl font-bold tracking-tight leading-tight max-w-2xl mb-8 drop-shadow-sm transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                   A garota mais radiante que ja pisou na Terra!
                 </h1>
 
                 {/* Subcontador descritivo */}
-                <p className="font-sans text-xs md:text-sm text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-6">
+                <p className={`font-sans text-xs md:text-sm uppercase tracking-widest mb-6 transition-colors duration-500 ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
                   Estamos construindo nossa história há
                 </p>
 
                 {/* Contador de Aniversário Dinâmico */}
-                <Countdown />
+                <Countdown isDark={isDark} />
 
                 {/* Ícone Indicador de Scroll */}
                 <motion.a
@@ -155,7 +155,7 @@ function App() {
             </section>
 
             {/* Seção da Linha do Tempo (Nossa História) */}
-            <Timeline />
+            <Timeline isDark={isDark} />
 
             {/* Seção da Galeria de Fotos */}
             <Gallery />

@@ -107,7 +107,7 @@ const PolaroidPlaceholder = ({ title }) => (
   </div>
 );
 
-export default function Timeline() {
+export default function Timeline({ isDark }) {
   return (
     <section id="historia" className="relative py-20 px-4 max-w-6xl mx-auto">
       {/* Cabeçalho da Seção */}
@@ -155,11 +155,11 @@ export default function Timeline() {
                     <span>{event.date}</span>
                   </div>
 
-                  <h3 className="font-serif text-xl md:text-2xl text-slate-800 dark:text-white font-medium mb-3">
+                  <h3 className={`font-serif text-xl md:text-2xl font-medium mb-3 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-850'}`}>
                     {event.title}
                   </h3>
 
-                  <p className="font-sans text-xs md:text-sm text-slate-900 dark:text-slate-200 leading-relaxed">
+                  <p className={`font-sans text-xs md:text-sm leading-relaxed transition-colors duration-500 ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>
                     {event.description}
                   </p>
                 </div>
