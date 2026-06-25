@@ -76,7 +76,7 @@ function App() {
                 Para você, Gracinha 🤍
               </p>
 
-              <p className="font-sans text-sm md:text-base text-slate-500 dark:text-slate-400 mb-8 max-w-sm leading-relaxed">
+              <p className="font-sans text-sm md:text-base text-slate-900 dark:text-slate-200 mb-8 max-w-sm leading-relaxed">
                 Como fui barrado de dar presentes, dediquei meu tempo criando esse memorial para eternizar nossa história.
               </p>
 
@@ -130,12 +130,12 @@ function App() {
                   Para você, Gracinha 🤍
                 </h2>
 
-                <h1 className="font-serif text-3xl md:text-5xl text-slate-950 dark:text-white font-bold tracking-tight leading-tight max-w-2xl mb-8 drop-shadow-sm">
+                <h1 className="font-serif text-3xl md:text-5xl text-black dark:text-white font-bold tracking-tight leading-tight max-w-2xl mb-8 drop-shadow-sm">
                   A garota mais radiante que ja pisou na Terra!
                 </h1>
 
                 {/* Subcontador descritivo */}
-                <p className="font-sans text-xs md:text-sm text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-6">
+                <p className="font-sans text-xs md:text-sm text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-6">
                   Estamos construindo nossa história há
                 </p>
 

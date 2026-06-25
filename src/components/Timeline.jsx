@@ -159,7 +159,7 @@ export default function Timeline() {
                     {event.title}
                   </h3>
 
-                  <p className="font-sans text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sans text-xs md:text-sm text-slate-900 dark:text-slate-200 leading-relaxed">
                     {event.description}
                   </p>
                 </div>

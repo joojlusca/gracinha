@@ -97,7 +97,7 @@ export default function Countdown() {
             <span className="font-serif text-3xl md:text-5xl font-semibold text-romantic-deep dark:text-romantic-darkAccent text-glow-rose">
               {String(block.value).padStart(2, '0')}
             </span>
-            <span className="text-xs md:text-sm font-medium tracking-wider text-slate-500 dark:text-slate-400 mt-2 uppercase">
+            <span className="text-xs md:text-sm font-medium tracking-wider text-slate-800 dark:text-slate-300 mt-2 uppercase">
               {block.label}
             </span>
           </div>
@@ -105,7 +105,7 @@ export default function Countdown() {
       </div>
 
       {/* Dias totais acumulados */}
-      <div className="mt-8 flex items-center justify-center gap-2 px-6 py-2 rounded-full glass-card border-romantic-soft/20 text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">
+      <div className="mt-8 flex items-center justify-center gap-2 px-6 py-2 rounded-full glass-card border-romantic-soft/20 text-sm md:text-base text-slate-900 dark:text-slate-200 font-medium">
         <Heart className="w-4 h-4 text-romantic-deep dark:text-romantic-darkAccent animate-pulse-slow fill-current" />
         <span>Já são <strong className="text-romantic-deep dark:text-romantic-darkAccent font-semibold font-serif text-lg">{timeLeft.totalDays}</strong> dias rindo das suas gracinhas!</span>
         <Heart className="w-4 h-4 text-romantic-deep dark:text-romantic-darkAccent animate-pulse-slow fill-current" />
